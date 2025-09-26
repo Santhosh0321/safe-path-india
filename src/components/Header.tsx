@@ -20,17 +20,18 @@ export const Header = () => {
 
   return (
     <header className="w-full bg-background border-b-2 border-primary shadow-card">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex justify-between items-center gap-2 sm:gap-4">
         {/* Platform Title */}
-        <div className="flex items-center space-x-3">
-          <div className="bg-gradient-hero p-2 rounded-lg">
-            <AlertTriangle className="h-8 w-8 text-primary-foreground" />
+        <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
+          <div className="bg-gradient-hero p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+            <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground" />
           </div>
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-primary">
-              Disaster Management Education Platform
+          <div className="min-w-0 flex-1">
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-primary leading-tight">
+              <span className="sm:hidden">Disaster Management</span>
+              <span className="hidden sm:inline">Disaster Management Education Platform</span>
             </h1>
-            <p className="text-sm text-muted-foreground hidden sm:block">
+            <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
               Learn. Prepare. Stay Safe.
             </p>
           </div>
@@ -39,11 +40,11 @@ export const Header = () => {
         {/* SOS Button */}
         <Button
           onClick={handleSOSClick}
-          className="emergency-pulse gradient-emergency text-emergency-foreground font-bold px-6 py-3 shadow-emergency hover:shadow-emergency/50 transition-all duration-200"
-          size="lg"
+          className="emergency-pulse gradient-emergency text-emergency-foreground font-bold px-3 sm:px-6 py-2 sm:py-3 shadow-emergency hover:shadow-emergency/50 transition-all duration-200 flex-shrink-0"
+          size="sm"
         >
-          <Phone className="h-5 w-5 mr-2" />
-          🚨 SOS
+          <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
+          <span className="text-xs sm:text-sm">🚨 SOS</span>
         </Button>
       </div>
     </header>
